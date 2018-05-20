@@ -1,0 +1,82 @@
+\reviewer
+
+\comment{The paper describes a model which can be used to predict force and
+torque output of a system of fiber-reinforced elastomeric actuators
+arranged in parallel. Given the initial and current configuration of
+the actuator system, the model calculates the range of possible forces
+and torques that can be produced within a given pressure range. The
+authors present the theory behind their work and verify it
+experimentally with a three-actuator system. The work is very nice and
+with some improvements to the paper can be a valuable contribution to
+the field.}
+\response{We thank the reviewer for their kind comments.}
+
+\comment{I think it would be appropriate to cite the work of Pritts and
+Rahn, who did work on combining McKibben actuator in parallel
+combinations:
+M.B. Pritts and C.D. Rahn, Design of an artificial muscle continuum
+robot, IEEE ICRA, pp.4742—4746, 2004}
+\response{Thank you for bringing this work to our attention. The recommended citation has been added.}
+
+\comment{Figure 1: I think this figure is misleading. Reading the
+caption of the figure, where the authors refer to ‘fully controllable
+multi-dimensional soft actuation’, it sounds as though the paper will
+describe how to control the motion and force of soft actuator systems
+like the ones pictured. However, the paper does not deal with position
+control, only force control. Furthermore, my understanding is that the
+model (at least the version of it presented in this paper) would not be
+able to describe the system on the bottom left, as the deformed shape
+of the actuators here is not cylindrical. This figure and caption
+should be changed to more accurately reflect the contribution of the
+paper.}
+\response{The reviewer is correct in that position control is outside of the scope of this paper. We understand how Figure 1 could be misleading, and have edited both the figure and its caption to better reflect the contributions of this paper.}
+
+\comment{In section 2B, the authors state that the geometrical
+deformation of the FREE can be fully defined by the twist and change in
+length. However, the change in radius or volume is also needed to fully
+define the deformation, so this should be re-phrased.}
+\response{We thank the reviewer for pointing this out and recognize that the phrasing here may have been misleading. In general, three independent parameters are needed to fully describe the geometry of a cylinder with twisted ends: radius, length, and twist. However, if the wall of the cylinder is composed of inextensible fibers wound in helices, these three parameters become coupled. This allows us to describe the radius of the cylinder in terms of its length and twist, meaning its geometry can now be described by just two parameters. We have added text to hopefully clarify this point.}
+
+\comment{Figure 11: I’m not sure what this is describing. Are the shapes
+in this figure qualitative shapes showing the shape of the zonotope for
+each state? It should be stated that they are qualitative or else
+please provide some scale to enable conversion to quantitative results.}
+\response{This figure is intended to show how the shape of the zonotope varies over the state space in order to highlight the states at which certain force directions are not attainable. The black outlines of the convex hulls of measured points from Fig. 9 are superimposed to provide a sense of scale without distracting from the primary purpose of the figure. We have edited the caption to hopefully make this more clear.}
+
+\comment{In Figure 9, do the black lines outline the convex hull of the
+experimental results?}
+\response{Yes, indeed they do. We thank the reviewer for noticing this and have edited the caption to explain this point.}
+
+\comment{Figure 5 is not very clear – what does the grey shaded are
+represent? Maybe a corresponding photograph of the same setup would
+help with clarification.}
+\response{We thank the reviewer for bringing this to our attention. This figure is meant to show how $d_i$ and $a_i$ are defined for an arbitrary combination of FREEs attached to a common end effector. The shaded region is meant to be a translucent version of that end effector. We have added a zoomed out view of this hypothetical system with a solid colored end effector to hopefully make the figure more discernible.}
+
+\comment{Some minor issues:
+In Equation 10, I think there is a bar missing from J.
+In Section 2B, there is a reference to Figure 1, which I think should
+be a reference to Figure 3.
+At the end of section 3, the authors to Figures 9b and 9d as showing
+the non-extended configurations, but I think this is supposed to say 9a
+and 9c.
+There are some typos e.g. ‘Steward’ instead of ‘Stewart’.}
+\response{We thank the reviewer for pointing out these typos, and have edited the text accordingly.}
+
+\comment{There is currently not a lot of literature on predicting force output
+from soft actuators (other than from individual McKibben actuators), so
+this paper is a nice contribution to the field. However, the paper is
+missing some references on analytical modeling of fiber reinforced
+actuators to predict their motion and force and a thorough description
+of past work by other groups would help set this work better in context
+in the field.}
+\response{We appreciate the validation of our efforts, and have revised a large portion of the text in the introduction in an attempt to better describe past work and place this paper within the context of the field.}
+
+\comment{Additionally, the approach has some limitations, as it relies on the
+existence of an inverse kinematics function for the actuators and it
+does not account for buckling of the actuators. The authors state in
+their conclusions that they envision the force zonotope being used in
+design of soft actuator systems, but it would be important to predict
+if and when buckling will occur, in order for this model to be
+successfully used for designing systems.}
+\response{We acknowledge this limitation of our modeling approach, and have added text to the conclusion to make this shortcoming more clear.}
+

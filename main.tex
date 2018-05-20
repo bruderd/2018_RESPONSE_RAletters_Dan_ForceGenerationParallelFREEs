@@ -1,0 +1,110 @@
+\documentclass[dvipsnames ]{article}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+%\usepackage[most]{tcolorbox}
+%\usepackage{mdframed}
+ \usepackage{tikz}
+ \usetikzlibrary{calc,patterns,
+                 decorations.pathmorphing,
+                 decorations.markings}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage{changepage}
+\usepackage[left=1in,right=1in,top=0.9in,bottom=.9in,letterpaper]{geometry}
+\usepackage{todonotes}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{lipsum}
+\usepackage{calc}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{multirow}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\providecommand{\red}[1]{\textcolor{red}{#1}}
+\providecommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcounter{commentcounter}
+\setcounter{commentcounter}{1}
+\newcounter{rcounter}
+\setcounter{rcounter}{0}
+
+\newlength{\indentresponse}
+\setlength{\indentresponse}{.5cm}
+
+\providecommand{\reviewer}{
+\setcounter{commentcounter}{1}
+\stepcounter{rcounter}
+\section*{Reviewer \arabic{rcounter}}
+}
+
+\providecommand{\AEreview}{
+\setcounter{commentcounter}{1}
+\stepcounter{rcounter}
+\section*{Associate Editor}
+}
+
+\newcommand{\revcomment}[1]{\marginpar{\##1}} % Include reference commands
+
+\providecommand{\comment}[1]{\noindent {\bf Comment \arabic{commentcounter} :}
+\vspace{.1in}
+\newline {\it #1}\vspace{.1in}
+}
+
+\providecommand{\comments}[2]{\noindent {\bf Comments \arabic{commentcounter} --\addtocounter{commentcounter}{#1}\addtocounter{commentcounter}{-1} \arabic{commentcounter} :}
+\vspace{.1in}
+\newline {\it #2}\vspace{.1in}
+}
+
+\providecommand{\response}[1]{
+\noindent
+\begin{adjustwidth}{\indentresponse}{}
+\noindent\colorbox{gray!25}{
+\parbox{\textwidth-\indentresponse-.5cm}{
+\setlength{\parskip}{.1in}
+\setlength{\parindent}{.1in}
+#1}
+}
+\end{adjustwidth}
+%\begin{tcolorbox}[breakable,enhanced]
+%#1
+%\end{tcolorbox}
+\revcomment{\arabic{rcounter}.\arabic{commentcounter}}
+\stepcounter{commentcounter}
+\vspace{.1in}
+}
+
+\providecommand{\excerpt}[1]{
+\noindent
+\begin{adjustwidth}{\indentresponse}{}
+\noindent\colorbox{green!15}{
+\parbox{\textwidth-\indentresponse-.5cm}{\rm \bf
+\setlength{\parskip}{.1in}
+\setlength{\parindent}{.1in}
+\textcolor{Sepia}{#1}}
+}
+\end{adjustwidth}
+\vspace{.1in}
+}
+
+\providecommand{\N}{\ensuremath \mathbb{N}}
+\providecommand{\blue}[1]{\textcolor{black}{#1}}
+\begin{document}
+
+
+\title{
+Force Generation by Parallel Combinations of Fiber-Reinforced Fluid-Driven Actuators \\
+{\bf Response to Reviewers}}
+\author{Daniel Bruder, Audrey Sedal, Ram Vasudevan, C. David Remy}
+\maketitle
+
+We would like to begin by thanking the reviewers for their careful review of our paper.
+The provided comments were incredibly helpful and insightful.
+Based on the recommendations of the reviewers and editors, we have made several modification to the paper, which are summarized in detail below. 
+The changes made are summarized in detail below and a highlighted manuscript is attached.
+In the modified manuscript, new/modified text to address comments are in \red{red} and the corresponding reviewer's comment is referenced in the following format `reviewer\#.comment' in the margin.
+In the interest of keeping the response statement short, we have not copied, verbatim, the changes that are made in the paper.
+
+\input{reviewer1.tex}
+\input{reviewer3.tex}
+\input{reviewer6.tex}
+
+\end{document}

@@ -1,0 +1,159 @@
+\reviewer
+
+% \subsection{Overall comments}
+
+\comment{This paper estimates the stability basin for the sit-to-stand movement using unperturbed human data and inverted pendulum models. 
+When comparing two sit-to-stand methods with known stability differences, the method computes a larger stability basin for the more stable movement. 
+The computation time is surprisingly low.
+The results and discussion section were generally well written and fairly complete. 
+It includes a clear comparison with a different model-based metric and a compelling discussion of why the proposed method provides both more and more accurate information. }
+
+\response{We thank the reviewer for their kind comments.}
+
+\comment{The discussion of the potential utility of the stability basin method is a bit strongly stated for what was actually shown.}
+
+\response{We thank the reviewer for their observation. 
+We have updated the discussion section to address the reviewer's concerns.}
+
+\comment{The authors also do not include a comparison of the young vs. old results nor indicate which subjects are old in the body of the paper. 
+The age group could easily be included in Table 1. 
+The authors should probably discuss how stability differs with age and if the results match previous literature.}
+
+\response{As the reviewer pointed out, a comparison of young v. old was not a point of emphasis in the previous submission. 
+Because we are near the word limit, we opted to remove any discussion of young v. old, rather than adding the detail necessary to satisfactorily make this comparison. }
+
+\comment{Secs. 2 \& 3 are both methods, so they should be combined.}
+
+\response{We agree with the reviewer and have revised the manuscript accordingly.}
+
+\comment{Sec. 2 currently reads like a math-heavy engineering paper, not a biomechanics paper. 
+While it is fairly well written and understandable if the reader has a strong controls background, this is likely not the case for many Journal of Biomechanics readers. 
+To make it more accessible, the authors should motivate and explain the equations. 
+Biomechanics papers tend to read more like narratives. }
+
+\response{We appreciate the reviewer's concern and have substantially revised the Methods section in response to this comment and comments 1.9, 1.14, 1.20, and 2.8.}
+
+\comment{The authors should probably provide some justification for their assumptions.}
+
+\response{We thank the reviewer for their helpful suggestion. 
+We have elaborated on our assumptions and have included multiple citations to support each of assumption.}
+
+\comment{The authors should probably introduce the models they are using (Sec. 2.6) first and then develop the math (Sec. 2.2).}
+
+\response{We thank the reviewer for their helpful suggestion. 
+We have reorganized the methods section as suggested, and have added additional text to explain the relationship between the specific models and the notation used in the general dynamical systems model.}
+
+\comment{They also need to provide citations to advanced controls concepts: Lebesgue measure (plus a brief description), optimal control, and LQR algorithm.}
+
+\response{We thank the reviewer for their helpful suggestion.
+We have simplified our presentation by removing the reference to the Lebesgue measure.
+We have also included appropriate citations to optimal control and LQR in the methods section.}
+
+\comment{The authors need to provide more details on computing the stability basin. 
+The text makes it seem like v parameterizes the stability basin. 
+The authors also indicate that it is fairly trivial to find the stability basin. 
+This seems surprising because there are many infinities of possible functions that could be used. 
+It also seems like the choice of parameterization for v will affect the optimization a lot, but this is not given. 
+The authors should explain what the inequality constraints do, particularly the last two. 
+They should also explain how they know the optimization is convex since that does not seem obvious. 
+All but the first sentence in the paragraph after Eq. 5 are confusing. 
+How can a stability basin be feasible? 
+What does a 1-super-level set mean physically?}
+
+\response{We appreciate the reviewer's concern and have substantially revised the subsection entitled ``Computing the Stability Basin'' inside of the Methods section in response to this comment.}
+
+\comment{The title is very long}
+
+\response{We agree with the reviewer, and have shortened our title to the following: Stability Basin Estimates Fall Risk from Observed Kinematics, Demonstrated on the Sit-to-Stand Task. }
+
+\comment{The figures are hard to read when printed in black and white. 
+The authors should use different line styles and/or widths to further distinguish the conditions instead of just colors.}
+
+\response{We thank the author for pointing out this oversight. We have revised the figures and have used colorbrewer2.org to select colors that are both colorblind and BW print safe.}
+
+\comment{Is the stability basin the same thing as basin of attraction? 
+I am more used to the term basin of attraction.}
+
+\response{The reviewer is correct in identifying these terms as the same concept. 
+Here we opt for the term `stability basin' to emphasize that this set can be used to characterize the stability of a given locomotor pattern. 
+We have updated the text to clarify that the basin of attraction is equivalent to the stability basin concept.}
+
+\comment{The authors make a big point about creating customized models and limits in Sec. 2, but then never explain how they determine the limits.}
+
+\response{We thank the reviewer for pointing out that our previous description of the limits was unclear. We have substantially revised the Methods section and have expanded the portion on limit determination.}
+
+\comment{The authors should provide a bit more detail about how they go from unperturbed human movement to the stability basin.}
+
+\response{We appreciate the reviewer's concern and have substantially revised the Methods section in response to this comment and comments $1.5$, $1.9$, $1.20$, and $2.8$.}
+
+\comment{On line 36, it does not seem to be an example.}
+
+\response{We thank the reviewer for pointing out the lack of clarity in our original submission. 
+We have elaborated on this section to state that STS is one example of the motions for which indirect stability metrics have been developed.}
+
+\comment{What do the under and over bars on x mean?}
+
+\response{We thank the reviewer for pointing out where this notation should be defined. 
+We hope that the additional text provides the necessary clarification along with our response to Comments $1.13$ and $1.23$.}
+
+\comment{It is not clear if small angle approximations are valid. 
+When I first read it, I thought the model was going to be more philological and a lot of the joints, particularly the knee, have large ranges of motion. 
+Looking at the figures, it appears the models also have fairly large ranges of motion.}
+
+\response{We thank the reviewer for voicing their concern. 
+%In fact, the small angle approximation is only applied to generate the LQR controller. 
+%This computed control input is then subsequently used during the computation of the SB; however, this SB analysis is actually done with a $5^{th}$-order Taylor expansion of the dynamics for the IPM and a $4^\text{th}$-order Taylor expansion of the dynamics for the DPM. 
+%This was done specifically to avoid the concerns that the reviewer voiced. 
+We have written additional text throughout the Methods section to improve the clarity of the presentation.}
+
+\comment{On line 180, it is not clear what the Taylor expansion is taken with respect to. 
+It is also not clear why it is helpful to do this because it seems to just be replacing nonlinear trig functions with nonlinear polynomial functions.}
+
+\response{We thank the reviewer for voicing their concern. 
+We have addressed their concerns in the Methods section.
+%In particular, we replace the nonlinear trigonometric functions with nonlinear polynomial functions since our implementation of Equation (5) relies on Sums-of-Squares Programming to enforce each of the constraints.
+%This transformation allows us to replace the constraints with equivalent constraints over semidefinite matrices. 
+%Without this replacement this type of implementation would not have been as simple.}
+}
+
+\comment{On line 189, it would be better to cite a textbook or paper rather than Wolfram. 
+Almost any robotics textbook will have the equations of motion for the two-link system.}
+
+\response{We thank the reviewer for their suggestion and have updated the citation.}
+
+\comment{What is algorithm 1? (I later saw that it is included with the figures, but it is never referenced in such a way.)}
+
+\response{We appreciate the reviewer's concern and have substantially revised the Methods section  in response to this comment and comments 1.5, 1.9, 1.14, 2.8. Instead of formally defining Algorithm 1, we transformed it into explanatory prose to provide an overview of the Methods section.}
+
+\comment{How many times was each sit-to-stand task performed?}
+
+\response{We thank the reviewer for pointing out our oversight. The number of STS trials performed by each individual has been added to the Methods section.}
+
+\comment{In the text, indicate that the acceleration values are peak values.}
+
+\response{We appreciate the reviewer's careful reading of the text. 
+In fact, we are missing ``peak'' in a description in the Results. 
+We have added language to the Results to reiterate that peak acceleration values are used for this analysis.}
+
+\comment{Define what the bounded domain is.}
+
+\response{We have defined the bounded domain (1.2 times maximum and minimum observed state values) to the manuscript.}
+
+\comment{Fig. 7 is confusing. 
+If the colored bars show the range of possible values, then how come the boxplots are outside of the ranges? 
+Presumably all subjects did not fail to complete the task repeatedly. Why are there two boxplots per subject and not just one? 
+It would also be helpful to exaggerate the differences between the two sketches more. 
+They look pretty similar.}
+
+\response{We appreciate the reviewer's concern and agree that Figure 7 is confusing. We have substantially revised this figure and its caption to improve clarity.}
+
+\comment{Line 300 is missing the word ``time.''}
+
+\response{We thank the reviewer for their careful reading of the text. 
+We have included the missing word.}
+
+\comment{The basin of attraction is not convex for walking, so it seems like this method would be a lot harder to implement.}
+
+\response{We appreciate the reviewer's concern. In fact the SB does not have to be convex for the $1$ super-level set of $v$ to coincide with it. This is illustrated in Figure $1$ wherein the $1$-super level set is not convex. We have included additional text in the Methods section to address this concern.}
+
+\pagebreak
